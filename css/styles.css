@@ -102,13 +102,16 @@ nav h1 a {
   height: 400px;
   width: 100%;
 }
+.leaflet-control-attribution.leaflet-control {
+  display: none; /* Removal permitted by creator, Vladimir Agafonkin */
+}
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   align-items: center;
   background-color: #3397DB;
   height: 100%;
-  padding: 10px 5px;
+  padding: 10px 0;
   width: 100%;
 }
 .filter-options h2 {
