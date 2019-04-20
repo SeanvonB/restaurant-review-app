@@ -86,7 +86,7 @@ initMap = () => {
       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
-  
+
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -179,6 +179,8 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.className = "view-button";
+  more.tabIndex = "3";
   li.append(more)
 
   return li
