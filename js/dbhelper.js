@@ -145,7 +145,7 @@ class DBHelper {
 				url: DBHelper.urlForRestaurant(restaurant),
 			}
 		);
-		marker.addTo(newMap);
+		marker.addTo(map);
 		return marker;
 	}
 

@@ -13,24 +13,24 @@ let restaurants;
 // Initialize Leaflet map
 initMap = () => {
 	self.newMap = L.map("map", {
-		center: [40.722216, -73.987501],
+		center: [40.72, -73.98],
 		zoom: 12,
 		attributionControl: false,
 		scrollWheelZoom: false,
 	});
 	L.tileLayer(
-		"https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}",
+		"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
 		{
-			mapboxToken:
-				"pk.eyJ1Ijoic2VhbnZvbmIiLCJhIjoiY2p1bm0wdnZjMDJ1NjN5cnZidWJxdzBvbSJ9.52AlhHseM7nwsY0k7yVz2g",
-			maxZoom: 18,
 			attribution:
-				"Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, " +
-				"<a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, " +
-				"Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-			id: "mapbox.streets",
+				'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 18,
+			id: "mapbox/streets-v11",
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken:
+				"pk.eyJ1Ijoic2JheWVybiIsImEiOiJja3l1eXR2dmcxczllMm5vN3EzeHhsNHd2In0.Va3MhqBNOt_OnKKGJH4wIw",
 		}
-	).addTo(newMap);
+	).addTo(self.newMap);
 
 	updateRestaurants();
 };
@@ -81,7 +81,7 @@ createRestaurantHTML = (restaurant) => {
 	const image = document.createElement("img");
 	image.alt = `${restaurant.name}, ${restaurant.neighborhood}`;
 	image.className = "restaurant-img";
-	image.src = DBHelper.imageUrlForRestaurant(restaurant);
+	image.src = DBHelper.urlForRestaurantImage(restaurant);
 	li.append(image);
 
 	const name = document.createElement("h1");
@@ -184,8 +184,8 @@ resetRestaurants = (restaurants) => {
 updateRestaurants = () => {
 	const allCuisines = document.getElementById("cuisines-select");
 	const allNeighborhoods = document.getElementById("neighborhoods-select");
-	const cuisine = cuisines[allCuisines.selectedIndex].value;
-	const neighborhood = neighborhoods[allNeighborhoods.selectedIndex].value;
+	const cuisine = allCuisines[allCuisines.selectedIndex].value;
+	const neighborhood = allNeighborhoods[allNeighborhoods.selectedIndex].value;
 
 	DBHelper.fetchRestaurantByCuisineAndNeighborhood(
 		cuisine,
