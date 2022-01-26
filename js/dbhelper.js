@@ -6,8 +6,7 @@ class DBHelper {
 	// Construct URL for database
 	// UPDATE THIS WITH THE SERVER LOCATION OF restaurants.json!
 	static get DATABASE_URL() {
-		const port = 5500;
-		return `http://localhost:${port}/data/restaurants.json`;
+		return `data/restaurants.json`;
 	}
 
 	// Fetch ALL cuisines

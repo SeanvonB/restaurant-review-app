@@ -14,11 +14,13 @@ initMap = () => {
 			console.error(error);
 		} else {
 			self.newMap = L.map("map", {
-				center: [restaurant.latlng.lat, restaurant.latlng.lng],
+				center: [restaurant.latlng.lat + 0.001, restaurant.latlng.lng],
 				zoom: 15,
 				attributionControl: false,
+				doubleClickZoom: false,
 				scrollWheelZoom: false,
 			});
+
 			L.tileLayer(
 				"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
 				{
@@ -33,7 +35,12 @@ initMap = () => {
 				}
 			).addTo(self.newMap);
 			fillBreadcrumb();
-			DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
+
+			const marker = DBHelper.mapMarkerForRestaurant(
+				self.restaurant,
+				self.newMap
+			);
+			marker.bindPopup(marker.options.title).openPopup();
 		}
 	});
 };

@@ -16,6 +16,7 @@ initMap = () => {
 		center: [40.72, -73.98],
 		zoom: 12,
 		attributionControl: false,
+		doubleClickZoom: false,
 		scrollWheelZoom: false,
 	});
 	L.tileLayer(
@@ -52,12 +53,18 @@ initMap = () => {
 // Add Leaflet map markers
 addMarkersToMap = (restaurants = self.restaurants) => {
 	restaurants.forEach((restaurant) => {
-		// Add marker to the map
 		const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+
+		const popupLink = document.createElement("a");
+		popupLink.setAttribute("href", marker.options.url);
+		popupLink.textContent = marker.options.title;
+
+		marker.bindPopup(popupLink);
 		marker.on("click", onClick);
 		function onClick() {
-			window.location.href = marker.options.url;
+			marker.openPopup();
 		}
+
 		self.markers.push(marker);
 	});
 };
