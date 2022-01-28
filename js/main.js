@@ -4,11 +4,15 @@
 // while restaurant_info.js does the same for each specific restaurant.
 
 // Globals
+const favicon = document.querySelector("#favicon");
 let cuisines;
 let markers = [];
 let neighborhoods;
 let newMap;
 let restaurants;
+
+// Randomize favicon
+favicon.href = `img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
 
 // Initialize Leaflet map
 initMap = () => {

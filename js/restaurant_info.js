@@ -4,8 +4,12 @@
 // while main.js does the same for the home page.
 
 // Globals
+const favicon = document.querySelector("#favicon");
 let newMap;
 let restaurant;
+
+// Randomize favicon
+favicon.href = `img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
 
 // Initialize Leaflet map
 initMap = () => {
