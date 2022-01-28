@@ -95,13 +95,15 @@ createRestaurantHTML = (restaurant) => {
 	name.textContent = restaurant.name;
 	li.append(name);
 
+	const tags = document.createElement("div");
+	const cuisine = document.createElement("p");
 	const neighborhood = document.createElement("p");
+	tags.classList.add("tags");
+	cuisine.textContent = restaurant.cuisine_type;
 	neighborhood.textContent = restaurant.neighborhood;
-	li.append(neighborhood);
-
-	const address = document.createElement("p");
-	address.textContent = restaurant.address;
-	li.append(address);
+	tags.append(cuisine);
+	tags.append(neighborhood);
+	li.append(tags);
 
 	const more = document.createElement("a");
 	more.textContent = "View Details";
