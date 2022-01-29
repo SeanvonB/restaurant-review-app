@@ -164,9 +164,6 @@ fillRestaurantHoursHTML = (
 // Add all reviews to restaurant info
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 	const container = document.getElementById("reviews-container");
-	const title = document.createElement("h3");
-	title.textContent = "Reviews";
-	container.appendChild(title);
 
 	if (!reviews) {
 		const noReviews = document.createElement("p");
