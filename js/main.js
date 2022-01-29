@@ -17,11 +17,12 @@ favicon.href = `img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
 // Initialize Leaflet map
 initMap = () => {
 	self.newMap = L.map("map", {
-		center: [40.72, -73.98],
-		zoom: 12,
 		attributionControl: false,
+		center: [40.72, -73.98],
 		doubleClickZoom: false,
+		dragging: !L.Browser.mobile,
 		scrollWheelZoom: false,
+		zoom: 12,
 	});
 	L.tileLayer(
 		"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",

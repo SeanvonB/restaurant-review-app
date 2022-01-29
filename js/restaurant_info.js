@@ -18,11 +18,12 @@ initMap = () => {
 			console.error(error);
 		} else {
 			self.newMap = L.map("map", {
-				center: [restaurant.latlng.lat + 0.001, restaurant.latlng.lng],
-				zoom: 15,
 				attributionControl: false,
+				center: [restaurant.latlng.lat + 0.001, restaurant.latlng.lng],
 				doubleClickZoom: false,
+				dragging: !L.Browser.mobile,
 				scrollWheelZoom: false,
+				zoom: 15,
 			});
 
 			L.tileLayer(

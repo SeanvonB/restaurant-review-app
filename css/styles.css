@@ -14,6 +14,10 @@
 	outline: none; /* TODO: Replace outlines with on-theme cues */
 }
 
+html {
+	padding: env(safe-area-inset);
+}
+
 body {
 	align-items: center;
 	background-color: #333;
