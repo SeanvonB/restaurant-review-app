@@ -19,7 +19,7 @@ initMap = () => {
 		} else {
 			self.newMap = L.map("map", {
 				attributionControl: false,
-				center: [restaurant.latlng.lat + 0.001, restaurant.latlng.lng],
+				center: [restaurant.latlng.lat + 0.0035, restaurant.latlng.lng],
 				doubleClickZoom: false,
 				dragging: !L.Browser.mobile,
 				scrollWheelZoom: false,
@@ -45,7 +45,14 @@ initMap = () => {
 				self.restaurant,
 				self.newMap
 			);
-			marker.bindPopup(marker.options.title).openPopup();
+			marker
+				.bindPopup(
+					`<a href="${marker.options.url}">${
+						marker.options.title
+					}</a></br>
+				<img src="${DBHelper.urlForRestaurantImage(restaurant)}"></img>`
+				)
+				.openPopup();
 		}
 	});
 };

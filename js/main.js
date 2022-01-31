@@ -60,14 +60,17 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 	restaurants.forEach((restaurant) => {
 		const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
 
-		const popupLink = document.createElement("a");
-		popupLink.setAttribute("href", marker.options.url);
-		popupLink.textContent = marker.options.title;
-
-		marker.bindPopup(popupLink);
+		marker.bindPopup(
+			`<a href="${marker.options.url}">${marker.options.title}</a></br>
+			<img src="${DBHelper.urlForRestaurantImage(restaurant)}"></img>`
+		);
 		marker.on("click", onClick);
 		function onClick() {
 			marker.openPopup();
+			self.newMap.panTo([
+				restaurant.latlng.lat + 0.035,
+				restaurant.latlng.lng,
+			]);
 		}
 
 		self.markers.push(marker);

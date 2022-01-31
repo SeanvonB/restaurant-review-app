@@ -43,6 +43,7 @@ footer {
 	background-color: #333;
 	border-top: 8px solid #444;
 	color: #aaa;
+	cursor: default;
 	padding: 16px;
 	text-align: center;
 	width: 100%;
@@ -74,6 +75,51 @@ main {
 
 .leaflet-marker-icon {
 	color: #085;
+}
+
+.leaflet-popup-content {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0 4px;
+	width: 160px;
+}
+
+.leaflet-popup-content a {
+	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
+		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
+	text-transform: uppercase;
+	color: var(--primary);
+}
+
+.leaflet-popup-content a:active {
+	color: var(--accent);
+}
+
+.leaflet-popup-content img {
+	border-color: #ccc #eee #eee #ccc;
+	border-style: solid;
+	border-width: 2px;
+	margin: 8px 0 0;
+	width: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+	background-color: #ddd;
+	border-color: #eee #ccc #ccc #eee;
+	border-style: solid;
+	border-width: 2px;
+	box-sizing: content-box;
+}
+
+.leaflet-popup-tip {
+	background-color: #ccc;
+	border-color: #ddd #bbb #bbb #ddd;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.leaflet-popup-close-button {
+	margin: 4px 4px 0 0;
 }
 
 #map {
@@ -156,6 +202,7 @@ header h1 a .city {
 	border-color: #eee #ccc #ccc #eee;
 	border-style: solid;
 	border-width: 4px;
+	cursor: default;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -230,6 +277,7 @@ header h1 a .city {
 	align-items: center;
 	background-color: #ddd;
 	border-bottom: 4px solid #ccc;
+	cursor: default;
 	display: flex;
 	justify-content: center;
 	padding: 16px 0;
@@ -266,6 +314,7 @@ header h1 a .city {
 	border-color: #eee #ccc #ccc #eee;
 	border-style: solid;
 	border-width: 8px;
+	cursor: default;
 	padding: 24px;
 }
 
@@ -308,6 +357,7 @@ header h1 a .city {
 }
 
 .inside #reviews-heading {
+	cursor: default;
 	margin: 16px 0 0;
 	width: 100%;
 }
@@ -340,7 +390,8 @@ header h1 a .city {
 /* ============================= Media Queries ============================= */
 @media (hover: hover) {
 	footer a:hover,
-	.inside #breadcrumb li a:hover {
+	.inside #breadcrumb li a:hover,
+	.leaflet-popup-content a:hover {
 		color: var(--accent);
 	}
 }
