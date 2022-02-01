@@ -80,7 +80,9 @@ main {
 .leaflet-popup-content {
 	font-size: 16px;
 	font-weight: bold;
+	line-height: 1;
 	padding: 0 4px;
+	text-align: center;
 	width: 160px;
 }
 
@@ -120,7 +122,18 @@ main {
 }
 
 .leaflet-popup-close-button {
-	margin: 20px 4px 0 0;
+	/* All the !importants override the Leaflet defaults */
+	background-color: #555 !important;
+	border-bottom: 4px solid #444 !important;
+	border-left: 4px solid #666 !important;
+	border-radius: 100px;
+	border-right: 4px solid #444 !important;
+	border-top: 4px solid #666 !important;
+	height: 32px !important;
+	left: 184px;
+	margin: 4px 0 0;
+	padding: 4px 0 0 !important;
+	width: 32px !important;
 }
 
 #map {
@@ -215,6 +228,7 @@ header h1 a .city {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	line-height: 1;
 	margin: 8px;
 	max-width: 400px;
 	padding: 24px;
@@ -360,6 +374,7 @@ header h1 a .city {
 .inside #restaurant-name {
 	color: var(--primary);
 	font-size: 32px;
+	line-height: 1;
 	margin: 0 0 16px;
 	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
 		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
