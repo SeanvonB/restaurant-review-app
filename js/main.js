@@ -24,6 +24,7 @@ initMap = () => {
 		scrollWheelZoom: false,
 		zoom: 12,
 	});
+
 	L.tileLayer(
 		"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
 		{
@@ -37,6 +38,11 @@ initMap = () => {
 				"pk.eyJ1Ijoic2JheWVybiIsImEiOiJja3l1eXR2dmcxczllMm5vN3EzeHhsNHd2In0.Va3MhqBNOt_OnKKGJH4wIw",
 		}
 	).addTo(self.newMap);
+
+	self.newMap.on("click", onClick);
+	function onClick(e) {
+		self.newMap.panTo(e.latlng);
+	}
 
 	updateRestaurants();
 };
@@ -67,10 +73,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 		marker.on("click", onClick);
 		function onClick() {
 			marker.openPopup();
-			self.newMap.panTo([
-				restaurant.latlng.lat + 0.035,
-				restaurant.latlng.lng,
-			]);
 		}
 
 		self.markers.push(marker);

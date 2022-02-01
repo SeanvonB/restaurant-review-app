@@ -19,7 +19,10 @@ initMap = () => {
 		} else {
 			self.newMap = L.map("map", {
 				attributionControl: false,
-				center: [restaurant.latlng.lat + 0.0035, restaurant.latlng.lng],
+				center: [
+					restaurant.latlng.lat + 0.00375,
+					restaurant.latlng.lng,
+				],
 				doubleClickZoom: false,
 				dragging: !L.Browser.mobile,
 				scrollWheelZoom: false,
@@ -39,6 +42,9 @@ initMap = () => {
 						"pk.eyJ1Ijoic2JheWVybiIsImEiOiJja3l1eXR2dmcxczllMm5vN3EzeHhsNHd2In0.Va3MhqBNOt_OnKKGJH4wIw",
 				}
 			).addTo(self.newMap);
+
+			self.newMap.on("click", onClickMap);
+
 			fillBreadcrumb();
 
 			const marker = DBHelper.mapMarkerForRestaurant(
@@ -53,6 +59,14 @@ initMap = () => {
 				<img src="${DBHelper.urlForRestaurantImage(restaurant)}"></img>`
 				)
 				.openPopup();
+			marker.on("click", onClickMarker);
+
+			function onClickMap(e) {
+				self.newMap.panTo(e.latlng);
+			}
+			function onClickMarker() {
+				marker.openPopup();
+			}
 		}
 	});
 };
