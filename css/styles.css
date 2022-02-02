@@ -73,6 +73,22 @@ main {
 	display: none; /* Moved to footer; allowed by owner, Vladimir Agafonkin */
 }
 
+.leaflet-control-zoom {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 96px;
+	justify-content: center;
+	width: 48px;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+	height: 50% !important;
+	padding: 8px 0 0;
+	width: 100% !important;
+}
+
 .leaflet-marker-icon {
 	color: #085;
 }
