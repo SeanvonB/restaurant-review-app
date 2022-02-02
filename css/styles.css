@@ -68,6 +68,20 @@ main {
 	width: 100%;
 }
 
+.leaflet-popup-content a,
+.inside #breadcrumb li a,
+.inside #restaurant-hours .closed,
+.inside #restaurant-name,
+.inside #reviews-heading h3,
+.inside #reviews-list .review.reviewer,
+.inside #reviews-list .review.stars,
+#restaurants-list li h1 {
+	color: var(--primary);
+	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
+		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
+	text-transform: uppercase;
+}
+
 /* ================================== Map ================================== */
 .leaflet-control-attribution {
 	display: none; /* Moved to footer; allowed by owner, Vladimir Agafonkin */
@@ -79,6 +93,7 @@ main {
 	flex-direction: column;
 	height: 96px;
 	justify-content: center;
+	margin: 16px !important;
 	width: 48px;
 }
 
@@ -100,13 +115,6 @@ main {
 	padding: 0 4px;
 	text-align: center;
 	width: 160px;
-}
-
-.leaflet-popup-content a {
-	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
-		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
-	text-transform: uppercase;
-	color: var(--primary);
 }
 
 .leaflet-popup-content a:active {
@@ -268,11 +276,7 @@ header h1 a .city {
 }
 
 #restaurants-list li h1 {
-	color: var(--primary);
 	margin: 16px 0;
-	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
-		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
-	text-transform: uppercase;
 	width: calc(100% - 16px);
 }
 
@@ -334,11 +338,7 @@ header h1 a .city {
 }
 
 .inside #breadcrumb li a {
-	color: var(--primary);
 	font-weight: bold;
-	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
-		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
-	text-transform: uppercase;
 }
 
 .inside #map {
@@ -379,6 +379,11 @@ header h1 a .city {
 	color: #555;
 }
 
+.inside #restaurant-hours .closed {
+	color: #933;
+	font-weight: bold;
+}
+
 .inside #restaurant-img {
 	background-color: #ddd;
 	border-color: #ccc #eee #eee #ccc;
@@ -389,13 +394,9 @@ header h1 a .city {
 }
 
 .inside #restaurant-name {
-	color: var(--primary);
 	font-size: 32px;
 	line-height: 1;
 	margin: 0 0 16px;
-	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
-		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
-	text-transform: uppercase;
 	width: 100%;
 }
 
@@ -406,16 +407,13 @@ header h1 a .city {
 }
 
 .inside #reviews-heading h3 {
-	color: var(--primary);
 	background-color: #ddd;
 	border-color: #eee #ccc #ccc #eee;
 	border-style: solid;
 	border-width: 8px;
 	font-size: 32px;
+	line-height: 1;
 	padding: 24px 24px 16px;
-	text-shadow: 0 -1px #eee, 1px 0 #eee, 0 -1px #eee, -1px 0 #eee,
-		-1px -1px #eee, 1px -1px #eee, 1px 1px #eee, -1px 1px #eee;
-	text-transform: uppercase;
 	width: 216px;
 }
 
@@ -426,8 +424,37 @@ header h1 a .city {
 	border-width: 8px;
 	display: block;
 	margin: 16px 0 0;
-	padding: 16px;
+	padding: 24px;
 	width: 100%;
+}
+
+.inside #reviews-list .review.reviewer {
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: none;
+}
+
+.inside #reviews-list .review.stars {
+	color: #fa5;
+	font-size: 20px;
+	line-height: 1;
+}
+
+.inside #reviews-list .review.comments {
+	border-left: 4px solid var(--primary);
+	box-shadow: inset 1px 0 0 0 #eee, -1px 0 0 0 #eee;
+	color: #555;
+	margin: 16px 0 0;
+	padding: 8px 16px;
+	width: 100%;
+}
+
+.inside td:nth-child(1) {
+	font-weight: bold;
+}
+
+.inside td:nth-child(2) {
+	padding: 0 0 0 16px;
 }
 
 /* ============================= Media Queries ============================= */

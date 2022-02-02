@@ -87,22 +87,42 @@ initMap = () => {
 createReviewHTML = (review) => {
 	const li = document.createElement("li");
 	const name = document.createElement("p");
+	name.classList.add("review", "reviewer");
 	name.textContent = review.name;
 	li.appendChild(name);
 
 	const date = document.createElement("p");
+	date.classList.add("review", "date");
 	date.textContent = review.date;
 	li.appendChild(date);
 
 	const rating = document.createElement("p");
-	rating.textContent = `Rating: ${review.rating}`;
+	const stars = document.createElement("span");
+	rating.classList.add("review", "rating");
+	stars.classList.add("review", "stars");
+	rating.textContent = "Rating: ";
+	stars.textContent = createReviewStars(review.rating);
+	rating.appendChild(stars);
 	li.appendChild(rating);
 
-	const comments = document.createElement("p");
+	const comments = document.createElement("blockquote");
+	comments.classList.add("review", "comments");
 	comments.textContent = review.comments;
 	li.appendChild(comments);
 
 	return li;
+};
+
+// Convert rating to unicode stars
+createReviewStars = (rating) => {
+	let total = "";
+	for (let i = 0; i < rating; i++) {
+		total += "★";
+	}
+	while (total.length < 5) {
+		total += "☆";
+	}
+	return total;
 };
 
 // Get current restaurant from page URL
@@ -172,6 +192,9 @@ fillRestaurantHoursHTML = (
 
 		const time = document.createElement("td");
 		time.textContent = operatingHours[key];
+		if (time.textContent === "CLOSED") {
+			time.classList.add("closed");
+		}
 		row.appendChild(time);
 
 		hours.appendChild(row);
