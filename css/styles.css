@@ -216,6 +216,7 @@ header h1 a .city {
 	justify-content: center;
 	padding: 8px;
 	text-align: center;
+	width: 100%;
 }
 
 #restaurants-list li {

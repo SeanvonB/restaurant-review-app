@@ -19,10 +19,7 @@ initMap = () => {
 		} else {
 			self.newMap = L.map("map", {
 				attributionControl: false,
-				center: [
-					restaurant.latlng.lat + 0.00375,
-					restaurant.latlng.lng,
-				],
+				center: [restaurant.latlng.lat, restaurant.latlng.lng],
 				doubleClickZoom: false,
 				dragging: !L.Browser.mobile,
 				scrollWheelZoom: false,
@@ -51,14 +48,12 @@ initMap = () => {
 				self.restaurant,
 				self.newMap
 			);
-			marker
-				.bindPopup(
-					`<a href="${marker.options.url}">${
-						marker.options.title
-					}</a></br>
+			marker.bindPopup(
+				`<a href="${marker.options.url}">${
+					marker.options.title
+				}</a></br>
 				<img src="${DBHelper.urlForRestaurantImage(restaurant)}"></img>`
-				)
-				.openPopup();
+			);
 			marker.on("click", onClickMarker);
 
 			function onClickMap(e) {
@@ -186,18 +181,19 @@ fillRestaurantHoursHTML = (
 // Add all reviews to restaurant info
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 	const container = document.getElementById("reviews-container");
+	const list = document.getElementById("reviews-list");
 
 	if (!reviews) {
-		const noReviews = document.createElement("p");
-		noReviews.textContent = "No Reviews Yet";
-		container.appendChild(noReviews);
-		return;
+		const noReviews = document.createElement("li");
+		noReviews.classList.add("no-reviews");
+		noReviews.textContent = "This location hasn't been reviewed yet.";
+		list.appendChild(noReviews);
+	} else {
+		reviews.forEach((review) => {
+			list.appendChild(createReviewHTML(review));
+		});
 	}
-	const ul = document.getElementById("reviews-list");
-	reviews.forEach((review) => {
-		ul.appendChild(createReviewHTML(review));
-	});
-	container.appendChild(ul);
+	container.appendChild(list);
 };
 
 // Get parameter by name from page URL

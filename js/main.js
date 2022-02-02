@@ -18,11 +18,11 @@ favicon.href = `img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
 initMap = () => {
 	self.newMap = L.map("map", {
 		attributionControl: false,
-		center: [40.72, -73.98],
+		center: [47.642, -122.335],
 		doubleClickZoom: false,
 		dragging: !L.Browser.mobile,
 		scrollWheelZoom: false,
-		zoom: 12,
+		zoom: 11,
 	});
 
 	L.tileLayer(
@@ -42,6 +42,7 @@ initMap = () => {
 	self.newMap.on("click", onClick);
 	function onClick(e) {
 		self.newMap.panTo(e.latlng);
+		console.log("You clicked:" + e.latlng.toString());
 	}
 
 	updateRestaurants();
