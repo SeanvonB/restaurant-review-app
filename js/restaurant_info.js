@@ -9,7 +9,7 @@ let newMap;
 let restaurant;
 
 // Randomize favicon
-favicon.href = `img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
+favicon.href = `./img/favicon-${Math.floor(Math.random() * 9) + 1}.ico`;
 
 // Initialize Leaflet map
 initMap = () => {
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	// Register service worker
 	if ("serviceWorker" in navigator) {
-		navigator.serviceWorker.register("/sw.js").catch(function (error) {
+		navigator.serviceWorker.register("./sw.js").catch(function (error) {
 			console.error(error);
 		});
 	}

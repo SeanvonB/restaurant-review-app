@@ -6,7 +6,7 @@ class DBHelper {
 	// Construct URL for database
 	// UPDATE THIS WITH THE SERVER LOCATION OF restaurants.json!
 	static get DATABASE_URL() {
-		return `data/restaurants.json`;
+		return `./data/restaurants.json`;
 	}
 
 	// Fetch ALL cuisines
@@ -167,6 +167,6 @@ class DBHelper {
 
 	// Construct URL for restaurant image
 	static urlForRestaurantImage(restaurant) {
-		return `/img/${restaurant.image}`;
+		return `./img/${restaurant.image}`;
 	}
 }
