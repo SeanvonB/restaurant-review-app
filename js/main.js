@@ -134,7 +134,7 @@ fetchCuisines = () => {
 			// Got an error!
 			console.error(error);
 		} else {
-			self.cuisines = cuisines;
+			self.cuisines = cuisines.sort();
 			fillCuisinesHTML();
 		}
 	});
@@ -147,7 +147,7 @@ fetchNeighborhoods = () => {
 			// Got an error
 			console.error(error);
 		} else {
-			self.neighborhoods = neighborhoods;
+			self.neighborhoods = neighborhoods.sort();
 			fillNeighborhoodsHTML();
 		}
 	});
@@ -197,7 +197,14 @@ resetRestaurants = (restaurants) => {
 		self.markers.forEach((marker) => marker.remove());
 	}
 	self.markers = [];
-	self.restaurants = restaurants;
+	self.restaurants = restaurants.sort(sortByKey("name"));
+};
+
+// Sort (alphabetize) object by specified key
+sortByKey = (key) => {
+	return function (a, b) {
+		return a[key].localeCompare(b[key]);
+	};
 };
 
 // Update page and map with current restaurants
