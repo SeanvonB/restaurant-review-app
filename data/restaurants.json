@@ -38,7 +38,7 @@
 		{
 			"id": 2,
 			"name": "Sunlight Cafe",
-			"neighborhood": "Ravenna",
+			"neighborhood": "Green Lake",
 			"image": "2.webp",
 			"address": "6404 9th Ave NE #100, Seattle, WA 98115",
 			"latlng": {
@@ -298,6 +298,132 @@
 				"Fri": "11:30AM–3PM, 4:30–10PM",
 				"Sat": "12PM–10PM",
 				"Sun": "12PM–9:30PM"
+			}
+		},
+		{
+			"id": 11,
+			"name": "Endolyne Joe's",
+			"neighborhood": "Fauntleroy",
+			"image": "11.webp",
+			"address": "9261 45th Ave SW, Seattle, WA 98136",
+			"latlng": {
+				"lat": 47.520559,
+				"lng": -122.390555
+			},
+			"cuisine_type": "American",
+			"operating_hours": {
+				"Mon": "8AM–9PM",
+				"Tue": "8AM–9PM",
+				"Wed": "8AM–9PM",
+				"Thu": "8AM–9PM",
+				"Fri": "8AM–9PM",
+				"Sat": "8AM–9PM",
+				"Sun": "8AM–9PM"
+			}
+		},
+		{
+			"id": 12,
+			"name": "Julia's",
+			"neighborhood": "Wallingford",
+			"image": "12.webp",
+			"address": "4401 Wallingford Ave N, Seattle, WA 98103",
+			"latlng": {
+				"lat": 47.660423,
+				"lng": -122.336379
+			},
+			"cuisine_type": "American",
+			"operating_hours": {
+				"Mon": "CLOSED",
+				"Tue": "CLOSED",
+				"Wed": "9AM–2:30PM",
+				"Thu": "9AM–2:30PM",
+				"Fri": "9AM–2:30PM",
+				"Sat": "9AM–2:30PM",
+				"Sun": "9AM–2:30PM"
+			}
+		},
+		{
+			"id": 13,
+			"name": "Cedars",
+			"neighborhood": "University District",
+			"image": "13.webp",
+			"address": "4759 Brooklyn Ave NE, Seattle, WA 98105",
+			"latlng": {
+				"lat": 47.664719,
+				"lng": -122.314498
+			},
+			"cuisine_type": "Indian",
+			"operating_hours": {
+				"Mon": "11AM–9:30PM",
+				"Tue": "11AM–10PM",
+				"Wed": "11AM–10PM",
+				"Thu": "11AM–10PM",
+				"Fri": "11AM–10PM",
+				"Sat": "11AM–10PM",
+				"Sun": "11AM–10PM"
+			}
+		},
+		{
+			"id": 14,
+			"name": "A la Mode",
+			"neighborhood": "West Seattle",
+			"image": "14.webp",
+			"address": "4225 SW Alaska St, Seattle, WA 98116",
+			"latlng": {
+				"lat": 47.56093,
+				"lng": -122.386301
+			},
+			"cuisine_type": "Bakery",
+			"operating_hours": {
+				"Mon": "10AM–9PM",
+				"Tue": "10AM–9PM",
+				"Wed": "10AM–9PM",
+				"Thu": "10AM–9PM",
+				"Fri": "10AM–10PM",
+				"Sat": "10AM–10PM",
+				"Sun": "10AM–9PM"
+			}
+		},
+		{
+			"id": 15,
+			"name": "Cafe Flora",
+			"neighborhood": "Madison Valley",
+			"image": "15.webp",
+			"address": "2901 E Madison St, Seattle, WA 98112",
+			"latlng": {
+				"lat": 47.623969,
+				"lng": -122.295207
+			},
+			"cuisine_type": "Vegetarian",
+			"operating_hours": {
+				"Mon": "9AM–9PM",
+				"Tue": "9AM–9PM",
+				"Wed": "9AM–9PM",
+				"Thu": "9AM–9PM",
+				"Fri": "9AM–9PM",
+				"Sat": "8AM–2:30PM, 5PM–9PM",
+				"Sun": "8AM–2:30PM, 5PM–9PM"
+			}
+		},
+		{
+			"id": 16,
+			"name": "Seattle Biscuit Company",
+			"neighborhood": "Fremont",
+			"image": "16.webp",
+			"address": "4001 Leary Way NW, Seattle, WA 98107",
+			"latlng": {
+				"lat": 47.656236,
+				"lng": -122.362413
+			},
+			"cuisine_type": "American",
+			"operating_hours": {
+				"Mon": "8AM–1PM",
+				"Tue": "8AM–1PM",
+				"Wed": "8AM–1PM",
+				"Thu": "8AM–1PM",
+				"Fri": "8AM–1PM",
+				"Sat": "8AM–2PM",
+				"Sun": "8AM–2PM"
 			}
 		}
 	]
