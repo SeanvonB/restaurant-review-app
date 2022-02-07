@@ -298,7 +298,15 @@
 				"Fri": "11:30AM–3PM, 4:30–10PM",
 				"Sat": "12PM–10PM",
 				"Sun": "12PM–9:30PM"
-			}
+			},
+			"reviews": [
+				{
+					"name": "Megan",
+					"date": "Oct. 3rd, 2021",
+					"rating": 4,
+					"comments": "In my old town, there weren't many options for someone who wanted vegan food, but Bahn Thai is the the perfect restaurant that both my friends and I can enjoy. The spice is strong, and I'm still building a tolerance; but, all-in-all, a fantastic restaurant. Do be warned that parking can be quite tricky, though."
+				}
+			]
 		},
 		{
 			"id": 11,
@@ -319,7 +327,15 @@
 				"Fri": "8AM–9PM",
 				"Sat": "8AM–9PM",
 				"Sun": "8AM–9PM"
-			}
+			},
+			"reviews": [
+				{
+					"name": "Sean",
+					"date": "Feb. 5th, 2022",
+					"rating": 5,
+					"comments": "I only know two things about Fauntleroy: they have the ferry to Vashon, and they have Endolyne Joe's."
+				}
+			]
 		},
 		{
 			"id": 12,
@@ -382,7 +398,21 @@
 				"Fri": "10AM–10PM",
 				"Sat": "10AM–10PM",
 				"Sun": "10AM–9PM"
-			}
+			},
+			"reviews": [
+				{
+					"name": "Sean",
+					"date": "Jan. 31st, 2022",
+					"rating": 5,
+					"comments": "They also have locations in Ballard and Phinney Ridge, but this one helps balance my map."
+				},
+				{
+					"name": "Megan",
+					"date": "Dec 10th, 2021",
+					"rating": 3,
+					"comments": "Pies are good but so expensive! Why does it cost $8 for a slice?!"
+				}
+			]
 		},
 		{
 			"id": 15,
@@ -403,7 +433,15 @@
 				"Fri": "9AM–9PM",
 				"Sat": "8AM–2:30PM, 5PM–9PM",
 				"Sun": "8AM–2:30PM, 5PM–9PM"
-			}
+			},
+			"reviews": [
+				{
+					"name": "Sean",
+					"date": "Feb. 3rd, 2022",
+					"rating": 5,
+					"comments": "Clean space, tons of plants, plentiful sunlight, fresh air, and an all-vegetarian menu – that's 5 stars right there, bay bee!"
+				}
+			]
 		},
 		{
 			"id": 16,
@@ -424,7 +462,15 @@
 				"Fri": "8AM–1PM",
 				"Sat": "8AM–2PM",
 				"Sun": "8AM–2PM"
-			}
+			},
+			"reviews": [
+				{
+					"name": "Sean",
+					"date": "Feb. 1st, 2022",
+					"rating": 5,
+					"comments": "I've never been here. But I wanted to add a Fremont location, and this place looks great!"
+				}
+			]
 		}
 	]
 }
